@@ -1,0 +1,93 @@
+Crie uma nova página HTML e adicione via JavaScript os seguintes elementos:
+1. Crie um formulário
+2. Selecione o formulário e salve-o numa variável com querySelector.
+Itens a seguir serão inseridos dentro do formulário:
+3. Um título com o texto: “Login”.
+4. Um campo de input text com um placeholder: “Email”.
+5. Um campo de input password com um placeholder: “Senha”.
+6. Um botão submit com o texto “Enviar”.
+7. Um botão reset com o texto “Cancelar”.
+8. Insira a propriedade disabled no campo de Email.
+9. Insira um estilo da sua escolha, a sugestão seria o display flex com flex-direction
+column.
+10. Remova o atributo placeholder do email.
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Formulário Cadastro</title>
+</head>
+
+<body>
+    <!--
+    <form name="meu_form">
+    
+        <h1>Entre em contato</h1>
+    
+        <input type="text" id="nomeid" placeholder="Tiago Vale" required="required" name="nome" />
+        <label for="nome">Nome</label>
+    
+        <input type="tel" id="foneid" placeholder="(xx)xx-xx-xx-xx" name="fone" />
+        <label for="fone">Fone</label>
+    
+        <input type="email" id="emailid" placeholder="fulano@mail.com" name="email" />
+        <label for="email">Email</label>
+    
+        <textarea placeholder="Deixe sua opnião"></textarea>
+    
+        <input type="submit" class="enviar" onclick="Enviar();" value="Enviar" />
+    </form>
+-->
+    <script>
+
+        let formulario = document.createElement("form");
+        let titulo = document.createElement("h1");
+        titulo.textContent = 'Login';
+        formulario.appendChild(titulo);
+
+        let div = document.createElement("div");
+        formulario.appendChild(div);
+
+        let inputEmail = document.createElement("input");
+        inputEmail.setAttribute('placeholder', "Email");
+        formulario.appendChild(inputEmail);
+
+        let inputSenha = document.createElement("input");
+        inputSenha.setAttribute('placeholder', "Senha");
+        inputSenha.setAttribute('type', "password");
+        formulario.appendChild(inputSenha);
+
+
+        let botaoEnviar = document.createElement("input");
+        botaoEnviar.setAttribute('type', "submit");
+        botaoEnviar.setAttribute('value', "Enviar");
+        div.appendChild(botaoEnviar);
+
+        let botaoCancelar = document.createElement("input");
+        botaoCancelar.setAttribute('type', "reset");
+        botaoCancelar.setAttribute('value', "Cancelar");
+        div.appendChild(botaoCancelar);
+
+        const body = document.querySelector("body").appendChild(formulario);
+
+        //Estilização:
+
+        formulario.style.display = 'flex'
+        formulario.style.flexDirection = 'column'
+        formulario.style.alignItems = 'center'
+        formulario.style.justifyContent = 'center'
+        formulario.style.border = '1px solid black'
+        formulario.style.backgroundColor = 'red'
+        formulario.style.padding = '3rem'
+        formulario.style.borderRadius = '1rem'
+
+    </script>
+
+
+</body>
+
+</html>
